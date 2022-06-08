@@ -1,18 +1,18 @@
 {% set name = "torch-hd" %}
-{% set version = "2.2.2" %}
+{% set version = "3.1.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 4ffb7c627441aa71a3e286cab035bbe9c52d7ccfaf2605c613a22cdfea1eeccb
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ceb8ebe34fb083f4d998808258daf3ff872683addba5788715bb027d6642166d
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,11 +40,11 @@ test:
     - pip
 
 about:
-  home: "https://github.com/hyperdimensional-computing/torchhd"
+  home: https://github.com/hyperdimensional-computing/torchhd
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Torchhd is a Python library for Hyperdimensional Computing"
+  summary: Torchhd is a Python library for Hyperdimensional Computing
 
 extra:
   recipe-maintainers:

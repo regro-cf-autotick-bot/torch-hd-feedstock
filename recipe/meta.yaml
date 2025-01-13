@@ -11,17 +11,17 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
     - pandas
-    - python >=3.6
+    - python >={{ python_min }}
     - requests
     - pytorch
 
@@ -38,6 +38,7 @@ test:
 
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: "https://github.com/hyperdimensional-computing/torchhd"
